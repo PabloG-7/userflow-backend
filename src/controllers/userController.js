@@ -10,16 +10,16 @@ const getAllUsers = (req, res) => {
 };
 
 const createUser = (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, idade, endereço, telefone } = req.body;
   db.query(
-    'INSERT INTO users (name, email) VALUES (?, ?)',
-    [name, email],
-    (err, results) => {
-      if (err) {
-        return res.status(500).json({ error: err.message });
+      'INSERT INTO users (name, email, idade, endereço, telefone) VALUES (?, ?, ?, ?, ?)',
+      [name, email, idade, endereço, telefone],
+      (err, results) => {
+          if (err) {
+              return res.status(500).json({ error: err.message });
+          }
+          res.status(201).json({ id: results.insertId, name, email, idade, endereço, telefone });
       }
-      res.status(201).json({ id: results.insertId, name, email });
-    }
   );
 };
 
