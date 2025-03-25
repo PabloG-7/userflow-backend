@@ -14,10 +14,7 @@ UserFlow é um projeto de backend desenvolvido com *Node.js* e *MySQL* para gere
 - Permite modificar as informações dos usuários já cadastrados.  
 
 ### *Exclusão de Usuários*  
-- Remova usuários do banco de dados.  
-
-### *Cadastro de Comentários*  
-- Usuários podem enviar comentários.
+- Remova usuários do banco de dados.
   
 
 ## *Tecnologias Utilizadas*  
