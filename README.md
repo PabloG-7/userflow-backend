@@ -1,75 +1,96 @@
-# *UserFlow*  
+# 🔐 UserFlow API
 
-UserFlow é um projeto de backend desenvolvido com *Node.js* e *MySQL* para gerenciar usuários. Ele fornece uma *API RESTful* que permite criar, listar e gerenciar dados de forma simples e eficiente.  
+API RESTful para gerenciamento de usuários, desenvolvida com Node.js, Express e MySQL. Permite operações CRUD completas com segurança e eficiência.
 
-## *Funcionalidades*  
+## 🔧 Tecnologias
 
-### *Cadastro de Usuários*  
-- Criação de usuários com *nome, e-mail, idade, endereço e telefone*.  
+| Tecnologia | Função |
+|------------|--------|
+| <img src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png" width="16"> **Node.js** | Ambiente de execução |
+| <img src="https://expressjs.com/images/favicon.png" width="16"> **Express** | Framework HTTP |
+| <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="16"> **MySQL** | Banco de dados |
+| <img src="https://dotenv.org/favicon.ico" width="16"> **Dotenv** | Variáveis de ambiente |
+| <img src="https://cors-anywhere.herokuapp.com/favicon.ico" width="16"> **CORS** | Segurança de requisições |
 
-### *Listagem de Usuários*  
-- Obtenha uma lista de todos os usuários cadastrados.  
+## 🚀 Funcionalidades
 
-### *Atualização de Usuários*  
-- Permite modificar as informações dos usuários já cadastrados.  
+### 👥 Gestão de Usuários
+- **Cadastro**: `POST /api/users`  
+  ```json
+  {
+    "name": "João Silva",
+    "email": "joao@email.com",
+    "age": 28,
+    "address": "Rua Exemplo, 123",
+    "phone": "(11) 99999-9999"
+  }
+  ```
+- Listagem: GET /api/users
 
-### *Exclusão de Usuários*  
-- Remova usuários do banco de dados.
-  
+- Atualização: PUT /api/users/:id
 
-## *Tecnologias Utilizadas*  
-- *Node.js* – Ambiente de execução JavaScript.  
-- *Express* – Framework para criação da API.  
-- *MySQL* – Banco de dados para armazenar usuários e comentários. 
-- *Dotenv* – Gerenciamento de variáveis de ambiente.  
-- *Cors* – Permite requisições de diferentes origens.  
+- Exclusão: DELETE /api/users/:id
 
-## *Como Usar*  
+## ⚙️ Instalação
+# Pré-requisitos
 
-### *Pré-requisitos*  
-- *Node.js* instalado.  
-- *MySQL* instalado e configurado.  
+- Node.js v18+
+- MySQL 8.0+
 
-### *Instalação*  
+## Clone o repositório
+```bash
+git clone https://github.com/pablog-7/userflow.git
+cd userflow
 
-1. *Clone o repositório:*  
-   bash
-   git clone https://github.com/seu-usuario/userflow.git
-   cd userflow
-     
+# Instale as dependências
+npm install
 
-2. *Instale as dependências:*  
-   bash
-   npm install
-     
+# Configure o banco de dados (crie um arquivo .env)
+cp .env.example .env
+# Edite o .env com suas credenciais do MySQL
 
-3. *Configure as variáveis de ambiente:*  
-   - Crie um arquivo **.env** e adicione suas configurações do banco de dados:  
-     
-     DB_HOST=localhost
-     DB_USER=
-     DB_PASSWORD=
-     DB_NAME=userflow
-     DB_PORT=3306
-       
+# Inicie o servidor
+npm start
+```
 
-4. *Inicie o servidor:*  
-   bash
-   npm start
-     
+## 🌐 Rotas da API
+Método	Endpoint	Descrição
+POST	/api/users	Cria novo usuário
+GET	/api/users	Lista todos os usuários
+GET	/api/users/:id	Busca usuário por ID
+PUT	/api/users/:id	Atualiza usuário
+DELETE	/api/users/:id	Remove usuário
 
-5. *A API estará disponível em:*  
-   
-   http://localhost:3000/api/users
-     
+## 📊 Exemplo de Respostas
+Sucesso (200 OK):
+```
+{
+  "id": 1,
+  "name": "João Silva",
+  "email": "joao@email.com",
+  "age": 28,
+  "address": "Rua Exemplo, 123",
+  "phone": "(11) 99999-9999",
+  "createdAt": "2023-11-20T12:00:00.000Z"
+}
+```
+Erro (404):
+```
+{
+  "error": "Usuário não encontrado"
+}
+```
 
-## *Rotas da API*  
+## 🤝 Como Contribuir
+Faça um Fork
 
-### *Usuários*  
+Crie uma branch (git checkout -b feature/nova-func)
 
-| Método  | Rota                | Descrição                  |
-|---------|--------------------|----------------------------|
-| POST  | /api/users       | Cadastra um novo usuário  |
-| GET   | /api/users       | Lista todos os usuários   |
-| PUT   | /api/users/:id   | Atualiza um usuário pelo ID |
-| DELETE | /api/users/:id   | Remove um usuário |
+Commit (git commit -am 'Adiciona X funcionalidade')
+
+Push (git push origin feature/nova-func)
+
+Abra um Pull Request
+
+## 📄 Licença
+MIT © Pablo G.
