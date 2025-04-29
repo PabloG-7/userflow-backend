@@ -55,11 +55,11 @@ npm start
 
 ## 🌐 Rotas da API
 Método	Endpoint	Descrição
-POST	/api/users	Cria novo usuário
-GET	/api/users	Lista todos os usuários
-GET	/api/users/:id	Busca usuário por ID
-PUT	/api/users/:id	Atualiza usuário
-DELETE	/api/users/:id	Remove usuário
+- POST	/api/users	Cria novo usuário 
+- GET	/api/users	Lista todos os usuários
+- GET	/api/users/:id	Busca usuário por ID
+- PUT	/api/users/:id	Atualiza usuário
+- DELETE	/api/users/:id	Remove usuário
 
 ## 📊 Exemplo de Respostas
 Sucesso (200 OK):
