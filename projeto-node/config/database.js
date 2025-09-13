@@ -35,4 +35,15 @@ connection.connect((err) => {
   console.log('Database:', connection.config.database);
 });
 
+// No config/database.js, adicione:
+connection.connect((err) => {
+  if (err) {
+    console.error('❌ Erro ao conectar ao MySQL:', err.message);
+    // Não impeça o servidor de iniciar, mas logue o erro
+    return;
+  }
+  console.log('✅ Conectado ao MySQL com sucesso!');
+});
+
+// Exporte a conexão mesmo com erro
 module.exports = connection;
