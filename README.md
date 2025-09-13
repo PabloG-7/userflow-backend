@@ -126,13 +126,6 @@ A aplicação ficará disponível em:
 - `GET /api/posts/:id` → Buscar post por ID
 - `PUT /api/posts/:id` → Atualizar post
 - `DELETE /api/posts/:id` → Excluir post
-
----
-
-## 🎬 Demo (Opcional)
-
-Você pode adicionar um GIF mostrando o fluxo da aplicação: login → criar post → listar posts.
-
 Exemplo de Markdown para GIF:
 
 ```markdown
