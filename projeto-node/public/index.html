@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Posts - Moderno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-blog me-2"></i>BlogModerno
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/login">
+                    <i class="fas fa-sign-in-alt me-1"></i>Login
+                </a>
+                <a class="nav-link" href="/register">
+                    <i class="fas fa-user-plus me-1"></i>Registrar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="hero-section text-center fade-in">
+                    <h1 class="hero-title">BlogModerno</h1>
+                    <p class="hero-subtitle">
+                        Compartilhe suas ideias e conecte-se com o mundo através de posts incríveis
+                    </p>
+                    <div class="mt-4">
+                        <a href="/register" class="btn btn-gradient me-3">
+                            <i class="fas fa-rocket me-2"></i>Começar Agora
+                        </a>
+                        <a href="/login" class="btn btn-outline-primary">
+                            <i class="fas fa-sign-in-alt me-2"></i>Fazer Login
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4 fade-in" style="animation-delay: 0.2s;">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-lock fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Segurança</h5>
+                                <p class="card-text">Autenticação JWT e senhas criptografadas para máxima segurança.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in" style="animation-delay: 0.4s;">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-edit fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">CRUD Completo</h5>
+                                <p class="card-text">Crie, edite, leia e exclua posts de forma intuitiva e rápida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in" style="animation-delay: 0.6s;">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">MySQL</h5>
+                                <p class="card-text">Banco de dados robusto e confiável para armazenar todas as informações.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <p class="mb-0">© 2024 BlogModerno - Desenvolvido com Node.js, Express e MySQL</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
