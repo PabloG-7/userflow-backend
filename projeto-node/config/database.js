@@ -1,49 +1,20 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
-// DEBUG: Log todas as variáveis de ambiente relacionadas a MySQL
-console.log('Todas variáveis MySQL:', {
-  MYSQLHOST: process.env.MYSQLHOST,
-  MYSQLUSER: process.env.MYSQLUSER,
-  MYSQLPASSWORD: process.env.MYSQLPASSWORD ? '***EXISTS***' : 'undefined',
-  MYSQLDATABASE: process.env.MYSQLDATABASE,
-  MYSQLPORT: process.env.MYSQLPORT,
-  DB_HOST: process.env.DB_HOST,
-  DB_USER: process.env.DB_USER,
-  DB_PASSWORD: process.env.DB_PASSWORD ? '***EXISTS***' : 'undefined',
-  DB_NAME: process.env.DB_NAME,
-  DB_PORT: process.env.DB_PORT
-});
-
-// CONFIGURAÇÃO PARA RAILWAY - com fallbacks robustos
 const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
-  user: process.env.MYSQLUSER || process.env.DB_USER || 'root',
-  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
-  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'railway',
-  port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
-  multipleStatements: true
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3306
 });
 
 connection.connect((err) => {
   if (err) {
-    console.error('Erro detalhado ao conectar ao MySQL:', err.message);
-    console.error('Código do erro:', err.code);
-    console.error('Stack trace:', err.stack);
+    console.error('Erro ao conectar ao MySQL:', err.message);
     return;
   }
   console.log('Conectado ao MySQL com sucesso!');
-  console.log('Database:', connection.config.database);
 });
 
-// No config/database.js, adicione:
-connection.connect((err) => {
-  if (err) {
-    console.error('❌ Erro ao conectar ao MySQL:', err.message);
-    // Não impeça o servidor de iniciar, mas logue o erro
-    return;
-  }
-  console.log('✅ Conectado ao MySQL com sucesso!');
-});
-
-// Exporte a conexão mesmo com erro
 module.exports = connection;
