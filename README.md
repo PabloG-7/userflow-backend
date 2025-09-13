@@ -39,33 +39,102 @@ Projeto **Node.js + Express + MySQL** com **autenticação JWT** e **CRUD de pos
 
 ## ⚡ Como Rodar Localmente
 
-```bash
-# Clone o repositório
-git clone https://github.com/PabloG-7/userflow-backend.git
-cd userflow-backend
+1. **Clone o repositório**
+    ```bash
+    git clone https://github.com/PabloG-7/userflow-backend.git
+    cd userflow-backend
+    ```
 
-# Instale as dependências
-npm install
+2. **Instale as dependências**
+    ```bash
+    npm install
+    ```
 
-# Configure o .env
-cp .env.example .env
+3. **Configure o banco de dados**
+    - Crie um banco de dados no MySQL (ex: `blog_db`).
+    - Execute o script `init-db.sql` que está na raiz do projeto para criar as tabelas.
 
-# Execute em modo desenvolvimento
-npm run dev
+4. **Configure o .env**
+    ```bash
+    cp .env.example .env
+    ```
+    - Edite o arquivo `.env` com suas credenciais do MySQL:
 
-A aplicação ficará disponível em:
+    ```env
+    DB_HOST=localhost
+    DB_USER=seu_usuario
+    DB_PASSWORD=sua_senha
+    DB_NAME=blog_db
+    DB_PORT=3306
+    JWT_SECRET=seu_jwt_secret_super_seguro_aqui
+    PORT=3000
+    ```
+
+5. **Execute a aplicação**
+    ```bash
+    # Modo desenvolvimento
+    npm run dev
+
+    # Modo produção
+    npm start
+    ```
+
+A aplicação ficará disponível em:  
 👉 http://localhost:3000
+
+---
+
+## 📖 Endpoints Principais
+
+### 🔑 Autenticação
+
+#### Registrar usuário
+`POST /api/auth/register`
+
+```json
+{
+  "name": "João Silva",
+  "email": "joao@email.com",
+  "password": "123456"
+}
 ```
-📖 Endpoints Principais
 
-POST /api/auth/register → Registrar usuário
+#### Fazer login
+`POST /api/auth/login`
 
-POST /api/auth/login → Fazer login
+```json
+{
+  "email": "joao@email.com",
+  "password": "123456"
+}
+```
 
-GET /api/posts → Listar posts
+---
 
-POST /api/posts → Criar post
+### 📝 Posts (requer autenticação)
 
-PUT /api/posts/:id → Atualizar post
+- `GET /api/posts` → Listar todos os posts
+- `POST /api/posts` → Criar post
 
-DELETE /api/posts/:id → Excluir post
+```json
+{
+  "title": "Meu Post",
+  "content": "Conteúdo do post"
+}
+```
+
+- `GET /api/posts/:id` → Buscar post por ID
+- `PUT /api/posts/:id` → Atualizar post
+- `DELETE /api/posts/:id` → Excluir post
+
+---
+
+## 🎬 Demo (Opcional)
+
+Você pode adicionar um GIF mostrando o fluxo da aplicação: login → criar post → listar posts.
+
+Exemplo de Markdown para GIF:
+
+```markdown
+![Demo UserFlow](./demo.gif)
+```
