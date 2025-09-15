@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - BlogModerno</title>
+    <title>Dashboard - UserFlow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <i class="fas fa-blog me-2"></i>BlogModerno
+                <i class="fas fa-stream me-2"></i>UserFlow
             </a>
-            <div class="navbar-nav ms-auto align-items-center">
-                <span class="navbar-text me-3 user-greeting">
-                    <i class="fas fa-user me-1"></i>Olá, <span id="userName"></span>
-                </span>
-                <button id="logoutBtn" class="btn logout-btn">
-                    <i class="fas fa-sign-out-alt me-1"></i>Sair
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto align-items-center">
+                    <span class="navbar-text me-3 user-greeting">
+                        <i class="fas fa-user me-1"></i>Olá, <span id="userName"></span>
+                    </span>
+                    <button id="logoutBtn" class="btn btn-outline-light">
+                        <i class="fas fa-sign-out-alt me-1"></i>Sair
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
                 <div class="card mb-4 fade-in">
                     <div class="card-header">
                         <h4 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Criar Novo Post</h4>
@@ -35,14 +41,14 @@
                     <div class="card-body">
                         <form id="postForm">
                             <div class="mb-3">
-                                <label for="title" class="form-label">Título</label>
+                                <label for="title" class="form-label">Título do Post</label>
                                 <input type="text" class="form-control" id="title" placeholder="Digite um título criativo..." required>
                             </div>
                             <div class="mb-3">
                                 <label for="content" class="form-label">Conteúdo</label>
                                 <textarea class="form-control" id="content" rows="4" placeholder="Compartilhe suas ideias..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-gradient">
+                            <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane me-2"></i>Publicar Post
                             </button>
                         </form>
@@ -50,24 +56,34 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0"><i class="fas fa-newspaper me-2"></i>Posts Recentes</h4>
-                    <span class="badge bg-primary" id="postsCount">0 posts</span>
+                    <h4 class="mb-0"><i class="fas fa-newspaper me-2"></i>Meus Posts</h4>
+                    <span class="badge bg-primary rounded-pill p-2" id="postsCount">0 posts</span>
                 </div>
 
                 <div id="postsList" class="fade-in" style="animation-delay: 0.3s;">
-                    <!-- Posts serão carregados aqui via JavaScript -->
                     <div class="text-center py-5">
                         <i class="fas fa-spinner fa-spin fa-2x text-primary mb-3"></i>
-                        <p>Carregando posts...</p>
+                        <p>Carregando seus posts...</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer mt-5">
+    <footer class="footer">
         <div class="container">
-            <p class="mb-0">© 2024 BlogModerno - Dashboard</p>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2024 UserFlow - Dashboard</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
